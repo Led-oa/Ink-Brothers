@@ -24,7 +24,7 @@ const limiter = rateLimit({
   max: parseInt(process.env.RATE_LIMIT_MAX_REQUESTS) || 100,
   message: "Trop de requêtes depuis cette IP, veuillez réessayer plus tard.",
 });
-app.use("/api/", limiter);
+app.use("/", limiter);
 
 // Middlewares généraux
 app.use(morgan("dev"));
